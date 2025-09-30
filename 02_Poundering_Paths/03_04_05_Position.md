@@ -1,9 +1,22 @@
 # Challenge Name
-challenge is about how to change the position to else where
+challenge is about how to change the position to else where and going to different path etc
 
 ## My solve
-**Flag:** `pwn.college{8fDLZKAjTQAflzirJ4bZmaEwo-2.QX3QTN0wSM1kjNzEzW}`
-
+**Flag:** `git checkout -b feature/pondering-paths-challenge-3`
+`pwn.college{8fDLZKAjTQAflzirJ4bZmaEwo-2.QX3QTN0wSM1kjNzEzW}`
+It was mentioned to go the the given path using the things mentioned
+```
+hacker@paths~position-thy-self:~$ /challenge/run
+Incorrect...
+You are not currently in the /sys/kernel directory.
+Please use the `cd` utility to change directory appropriately.
+hacker@paths~position-thy-self:~$ cd /sys/kernel
+hacker@paths~position-thy-self:/sys/kernel$ /challenge/run
+Correct!!!
+/challenge/run is an absolute path, invoked from the right directory!
+Here is your flag:
+pwn.college{09jB9MqTP-KNBRimBYVQlZNucCB.QX2QTN0wSM1kjNzEzW}
+```
 It was mentioned that we would be shown where to go and then we where supposed t change the path form there
 ```
 hacker@paths~position-elsewhere:~$ /challenge/run
@@ -21,6 +34,7 @@ Correct!!!
 Here is your flag:
 pwn.college{8fDLZKAjTQAflzirJ4bZmaEwo-2.QX3QTN0wSM1kjNzEzW}
 ```
+![Screenshot for challenge 3](03_Position_Thy_Path.png)
 ![Screenshot of The Program and how I did](04_Position_Elsewhere.png)
 
 ## What I learned (optional)
