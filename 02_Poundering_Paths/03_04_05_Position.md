@@ -4,6 +4,8 @@ challenge is about how to change the position to else where and going to differe
 ## My solve
 **Flag:** `git checkout -b feature/pondering-paths-challenge-3`
 `pwn.college{8fDLZKAjTQAflzirJ4bZmaEwo-2.QX3QTN0wSM1kjNzEzW}`
+`pwn.college{U_VHy-hpAzoU3HHmzaxDGyH394k.QX4QTN0wSM1kjNzEzW}`
+
 It was mentioned to go the the given path using the things mentioned
 ```
 hacker@paths~position-thy-self:~$ /challenge/run
@@ -34,8 +36,22 @@ Correct!!!
 Here is your flag:
 pwn.college{8fDLZKAjTQAflzirJ4bZmaEwo-2.QX3QTN0wSM1kjNzEzW}
 ```
+```
+hacker@paths~position-yet-elsewhere:~$ /challenge/run
+Incorrect...
+You are not currently in the /etc directory.
+Please use the `cd` utility to change directory appropriately.
+hacker@paths~position-yet-elsewhere:~$ cd /etc
+hacker@paths~position-yet-elsewhere:/etc$ /challenge/run
+Correct!!!
+/challenge/run is an absolute path, invoked from the right directory!
+Here is your flag:
+pwn.college{U_VHy-hpAzoU3HHmzaxDGyH394k.QX4QTN0wSM1kjNzEzW}
+```
+
 ![Screenshot for challenge 3](03_Position_Thy_Path.png)
 ![Screenshot of The Program and how I did](04_Position_Elsewhere.png)
+![Screenshot for challenge 5](05_Position_Yet_Elsewhere.png)
 
 ## What I learned (optional)
 how to change form one path to another
