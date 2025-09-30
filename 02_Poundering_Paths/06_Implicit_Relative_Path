@@ -1,0 +1,25 @@
+# Challenge Name
+challenge is about how to write or go to file using implicit path
+
+## My solve
+**Flag:** `pwn.college{kmrSxuucXaB_IO-XiIcGyr8WeT8.QX5QTN0wSM1kjNzEzW}`
+
+It was mentioned that I should go to root and then using implicit path go to file called run.
+```
+hacker@paths~implicit-relative-paths-from-:~$ cd /
+hacker@paths~implicit-relative-paths-from-:/$ challenge/run
+Correct!!!
+challenge/run is a relative path, invoked from the right directory!
+Here is your flag:
+pwn.college{kmrSxuucXaB_IO-XiIcGyr8WeT8.QX5QTN0wSM1kjNzEzW}
+```
+![Screenshot for challenge 6](06_Implicit_Relative_Paths.png)
+
+## What I learned (optional)
+how to invoke a file by writing it's relative path implicitly.
+
+## Incorrect tangents (optional)
+NA
+
+## References (optional)
+nothing apart from what was given in the website
