@@ -1,34 +1,30 @@
 # Challenge Name
-This challenge was about understanding the difference between relative and absolute paths, specifically when using the cat command to read a file that isn't in the current directory.
+This was the first challenge in the "Comprehending Commands" module. The goal was to use the cat command to read the content of a file that was placed in my home directory.
 
 ## My solve
-**Flag:** `pwn.college{Yxq5oF7buh-ct3cl_F3C0vktLDI.QX5ETO0wSM1kjNzEzW}`
+**Flag:** `pwn.college{4EsPxT8Q5c5rKyz97KjihNBDf64.QXxcTN0wSM1kjNzEzW}`
 
-My thought process was to first try the most direct approach, and then use the information from the prompt to correct my mistake.
+My thought process was to use the most direct command for reading files.
 
-Step 1: The Initial (Incorrect) Attempt
-My first instinct was to treat the flag like it was in my current folder. I tried running cat ./flag, but this failed because ./ refers to the current directory, and the challenge clearly stated the file wasn't there.
+Step 1: Identifying the Goal
+The prompt clearly stated that a file named flag existed in my current directory (~) and that I needed to read its contents.
 
-Step 2: Correcting with the Absolute Path
-The prompt explicitly mentioned that the flag was at the absolute path /flag. I realized this meant I had to start my path from the very top of the filesystem (the root, /). This path works no matter where my current directory is.
+Step 2: Choosing the Right Tool
+I knew from the module name and the challenge title that the cat command was the tool for this job. cat is the standard command for concatenating and displaying file content.
 
 Step 3: Execution
-I then used the correct absolute path with the cat command, which successfully read the file and gave me the flag.
-
+Since the flag file was in my current working directory, I didn't need a complex path. I just needed to give cat the name of the file as an argument.
 ```
-hacker@commands~catting-absolute-paths:~$ cat ./flag
-cat: ./flag: No such file or directory
-hacker@commands~catting-absolute-paths:~$ cat /flag
-pwn.college{Yxq5oF7buh-ct3cl_F3C0vktLDI.QX5ETO0wSM1kjNzEzW}
-hacker@commands~catting-absolute-paths:~$  
+hacker@commands~cat-not-the-pet-but-the-command:~$ cat flag
+pwn.college{4EsPxT8Q5c5rKyz97KjihNBDf64.QXxcTN0wSM1kjNzEzW}
 ```
-![Screenshot for challenge 2](02_Catting_Absolute_Paths.png)
+![Screenshot for challenge 1](01_cat_Not_the_Pet_but_the_Command.png)
 
 ## What I learned (optional)
-This was a great lesson in the importance of absolute vs. relative paths. I learned that cat ./file only works if the file is in my current folder, while cat /file will work from anywhere on the system because it starts from the root directory.
+This challenge was a straightforward introduction to the cat command. I learned its basic syntax (cat [filename]) and confirmed that it's the primary tool for quickly viewing the contents of a file directly in the terminal.
 
 ## Incorrect tangents (optional)
-My initial attempt of cat ./flag was my incorrect tangent. It failed because I was thinking relatively (from my current spot) instead of absolutely (from the root of the whole system).
+NA
 
 ## References (optional)
 nothing apart from what was given in the website
