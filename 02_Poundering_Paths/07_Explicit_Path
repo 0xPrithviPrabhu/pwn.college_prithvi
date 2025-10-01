@@ -1,0 +1,56 @@
+# Challenge Name
+challenge is about how to write or go to file using explicit relative path
+
+## My solve
+**Flag:** `pwn.college{IcBI2V1nh8AAECuimUG2s-NQWFx.QXwUTN0wSM1kjNzEzW}`
+
+After getting stuck, I re-read the challenge title: "explicit relative paths, from /". This was the key clue. It told me that my starting position for this challenge had to be the root directory (/).
+
+Step 1: The "Position Thyself" Logic
+My first thought process was to fix my location. My terminal prompt showed ~, meaning I was in my home directory. The path ./challenge/run was failing because there's no challenge folder in my home. So, the first logical step was to move to the starting point mentioned in the title.
+
+Step 2: Execution - Position and Run
+I executed a two-command sequence. First, I changed my directory to root (/). Second, now that I was in the correct starting position, I used the explicit relative path (./) to run the program relative to my new location.
+```
+hacker@paths~explicit-relative-paths-from-:~$ /.
+bash: /.: Is a directory
+hacker@paths~explicit-relative-paths-from-:~$ cd /.
+hacker@paths~explicit-relative-paths-from-:/$ cd ./challenge/.
+hacker@paths~explicit-relative-paths-from-:/challenge$ ./challenge
+bash: ./challenge: No such file or directory
+hacker@paths~explicit-relative-paths-from-:/challenge$ ./
+bash: ./: Is a directory
+hacker@paths~explicit-relative-paths-from-:/challenge$ /./././././
+bash: /./././././: Is a directory
+hacker@paths~explicit-relative-paths-from-:/challenge$ cd /.
+hacker@paths~explicit-relative-paths-from-:/$ ././
+bash: ././: Is a directory
+hacker@paths~explicit-relative-paths-from-:/$ cd ./././
+hacker@paths~explicit-relative-paths-from-:/$ ./run
+bash: ./run: Is a directory
+hacker@paths~explicit-relative-paths-from-:/$ cd ..
+hacker@paths~explicit-relative-paths-from-:/$ cd
+hacker@paths~explicit-relative-paths-from-:~$ ./run
+bash: ./run: No such file or directory
+hacker@paths~explicit-relative-paths-from-:~$ ./challenge
+bash: ./challenge: No such file or directory
+hacker@paths~explicit-relative-paths-from-:~$ ./challenge/run
+bash: ./challenge/run: No such file or directory
+hacker@paths~explicit-relative-paths-from-:~$ cd /
+hacker@paths~explicit-relative-paths-from-:/$ ./challenge/run
+Correct!!!
+./challenge/run is a relative path, invoked from the right directory!
+Here is your flag:
+pwn.college{IcBI2V1nh8AAECuimUG2s-NQWFx.QXwUTN0wSM1kjNzEzW}
+hacker@paths~explicit-relative-paths-from-:/$ 
+```
+![Screenshot for challenge 7](06_Explicit_Path.png)
+
+## What I learned (optional)
+This was a great lesson in combining concepts. I learned that a relative path is useless unless you know your starting point. The solution required me to first cd to the correct location (/) and then use the explicit relative path (./challenge/run) to solve the challenge
+
+## Incorrect tangents (optional)
+NA
+
+## References (optional)
+nothing apart from what was given in the website
