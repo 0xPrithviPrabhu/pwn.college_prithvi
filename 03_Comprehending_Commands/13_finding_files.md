@@ -7,7 +7,7 @@ Finding files
 They told I could find files etc using file command and hence I used it and used contraint name which I gave as flag anf then one by one checked the flag
 
 ```
-^[[Bhacker@commands~finding-filesfind / -name flag
+Bhacker@commands~finding-filesfind / -name flag
 /home/hacker/flag
 find: ‘/tmp/tmp.4mK6TfTSUV’: Permission denied
 find: ‘/etc/ssl/private’: Permission denied
