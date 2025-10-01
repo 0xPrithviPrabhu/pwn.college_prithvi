@@ -5,6 +5,17 @@ challenge is about how to write or go to file using implicit path
 **Flag:** `pwn.college{kmrSxuucXaB_IO-XiIcGyr8WeT8.QX5QTN0wSM1kjNzEzW}`
 
 It was mentioned that I should go to root and then using implicit path go to file called run.
+My thought process was to first analyze the command I was given: challenge/run. I immediately noticed that it did not start with a forward slash (/), which told me it was a relative path.
+
+Step 1: Understanding the Requirement
+I knew that for a relative path to work, I must be in the correct starting directory. The path challenge/run means "look for a folder named challenge inside my current location, then find the run program inside it."
+
+Step 2: Finding the Correct Position
+My logical deduction was that the challenge folder must be located in the root directory (/) of the filesystem. Therefore, to make the relative path work, I first had to move to the root directory.
+
+Step 3: Execution
+First, I navigated to the root directory. Then, from that correct position, I executed the relative path provided.
+
 ```
 hacker@paths~implicit-relative-paths-from-:~$ cd /
 hacker@paths~implicit-relative-paths-from-:/$ challenge/run
