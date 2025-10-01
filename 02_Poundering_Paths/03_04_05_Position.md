@@ -7,6 +7,17 @@ challenge is about how to change the position to else where and going to differe
 `pwn.college{U_VHy-hpAzoU3HHmzaxDGyH394k.QX4QTN0wSM1kjNzEzW}`
 
 It was mentioned to go the the given path using the things mentioned
+
+My initial attempts to run the program failed with an error message telling me I wasn't in the correct directory. This was the key clue. My thought process was that I had to stop trying to run the program and first focus on navigating to the correct location.
+
+Step 1: Identify the Target Directory
+The error message explicitly stated the required location was /sys/kernel directory. I recognized this as an absolute path because it started with a /.
+
+Step 2: Navigate with cd and Handle the Space
+I knew the cd command was the tool for changing directories. I also noticed a space in kernel directory. My thought process was that the shell would misinterpret the space unless I handled it. I chose to wrap the entire absolute path in quotes to ensure the shell treated it as a single argument, which is a standard way to handle paths with spaces.
+
+Step 3: Execute the Program
+Once I was in the correct directory, I could then execute the program. The challenge description specified its location was /challenge/run, which is another absolute path
 ```
 hacker@paths~position-thy-self:~$ /challenge/run
 Incorrect...
